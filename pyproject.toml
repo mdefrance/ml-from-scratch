@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ml-from-scratch"
+version = "0.1.0"
+description = ""
+authors = ["MarioDEFRANCE <74489838+mdefrance@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">3.10, <=3.13"
+numpy = "^2.2.3"
+ipykernel = "^6.29.5"
+pytest = "^8.3.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
