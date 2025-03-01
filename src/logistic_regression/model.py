@@ -74,7 +74,7 @@ class LogisticRegression:
     def _compute_likelihood(self, fx: np.ndarray, y: np.ndarray) -> float:
         """computes likelihood of model"""
 
-        return -np.mean(np.dot(y, np.log(fx)) + np.dot((1 - y), np.log(1 - fx)))
+        return np.sum(y * np.log(fx + 1e-9) + (1 - y) * np.log(1 - fx + 1e-9))
 
     def _gradient_descent(self, x: np.ndarray, y: np.ndarray) -> tuple[np.ndarray, float]:
         """one run of descent gradient"""
@@ -132,7 +132,7 @@ class LogisticRegression:
     def predict(self, x: np.ndarray, threshold: float = 0.5) -> np.ndarray:
         """returns predicted classes"""
         return (self.predict_proba(x) >= threshold).astype(int)
-
+    
 
 if __name__ == "__main__":
     from sklearn.datasets import make_classification
