@@ -6,7 +6,7 @@ import numpy as np
 class DecisionTree:
     """implements a basic decision tree"""
 
-    def __init__(self, max_depth: int = 5, min_samples_split: int = 2) -> None:
+    def __init__(self, max_depth: int = 5, min_samples_split: int = 20) -> None:
         """
         Parameters
         ----------
@@ -43,6 +43,7 @@ class DecisionTree:
 
         # iterating over features
         for j in range(x.shape[1]):
+            print("getting into feature", j)
 
             # getting possible threshold for feature j
             x_j = x[:, j]
@@ -132,12 +133,15 @@ if __name__ == "__main__":
     np.random.seed(50)
     X_train = np.random.rand(1000, 5)  # 100 samples, 2 features
     y_train = (X_train[:, 0] + X_train[:, 1] > 1).astype(int)  # Binary target (simple rule)
+    y_train = np.random.randint(0, 2, 1000)
+    # print(y_train)
 
     X_test = np.random.rand(5, 5)  # 5 test samples
 
     # Train and predict with the decision tree
-    tree = DecisionTree(max_depth=3, min_samples_split=2)
+    tree = DecisionTree(max_depth=10, min_samples_split=2)
     tree.fit(X_train, y_train)
 
     predictions = tree.predict(X_test)
     print("Predictions:", predictions)
+    print("tree", tree.tree)
