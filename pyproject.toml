@@ -18,7 +18,15 @@ isort = "^6.0.1"
 flake8-pyproject = "^1.2.3"
 pylint = "^3.3.4"
 scikit-learn = "^1.6.1"
+torch = {version = "^2.6.0", source = "pytorch-gpu"}
+torchvision = {version = "^0.21.0", source = "pytorch-gpu"}
+torchaudio = {version = "^2.6.0", source = "pytorch-gpu"}
 
+
+[[tool.poetry.source]]
+name = "pytorch-gpu"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
 
 [tool.black]
 line-length = 100
