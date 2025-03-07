@@ -1,5 +1,12 @@
-""" implements a simple kmeans algorithm """
+"""
+K means algorithm from scratch
 
+select k data points at random -> k centroids
+compute distances of each data point to each centroid
+select closest centroid to each point
+average vectors of each group --> updated centroids
+repeat N times
+"""
 import numpy as np
 
 
