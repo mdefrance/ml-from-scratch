@@ -1,4 +1,4 @@
-""" implementing a decision tree"""
+"""implementing a decision tree"""
 
 import numpy as np
 
@@ -24,7 +24,7 @@ class DecisionTree:
         # getting unique values and counts
         _, counts = np.unique(y, return_counts=True)
         freqs = counts / np.sum(counts)
-        return 1 - np.sum(freqs) ** 2
+        return 1 - np.sum(freqs**2)
 
     def _compute_total_gini_impurity(self, y_left: np.ndarray, y_right: np.ndarray) -> float:
         """weighted sum of ginis"""
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     X_test = np.random.rand(5, 5)  # 5 test samples
 
     # Train and predict with the decision tree
-    tree = DecisionTree(max_depth=10, min_samples_split=2)
+    tree = DecisionTree(max_depth=3, min_samples_split=2)
     tree.fit(X_train, y_train)
 
     predictions = tree.predict(X_test)
