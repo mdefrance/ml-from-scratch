@@ -13,10 +13,8 @@ from numpy.typing import NDArray
 class OLSRegression:
     """Ordinary Least Squares regression model"""
 
-    def __init__(self, lr: float = 1e-2, iters: int = 1000) -> None:
+    def __init__(self) -> None:
         """initializes the model"""
-        self.lr = lr
-        self.iters = iters
         self.w = None
 
     def fit(self, x: NDArray, y: NDArray) -> None:
