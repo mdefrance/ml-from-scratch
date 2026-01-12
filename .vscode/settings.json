@@ -1,5 +1,5 @@
 {
-    "python.defaultInterpreterPath": "C:\\Users\\defra\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\ml-from-scratch-Pqh9Jybc-py3.11",
+    "python.defaultInterpreterPath": "{workspaceFolder}/.venv/Scripts/python.exe",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,

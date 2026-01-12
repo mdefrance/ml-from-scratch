@@ -49,3 +49,11 @@ disable = ["C0301", "C0103", "E0110", "W0621", "import-error"]
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.1.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "scikit-learn>=1.8.0",
+]
